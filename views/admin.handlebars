@@ -1,0 +1,31 @@
+
+
+<div class="col-md-8 col-sm-12 mx-auto">
+<h2>Welcome Admin</h2>
+<p class="lead">your Top 15 entry </p>
+<div class="bg-light rounded">
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Name </th>
+            <th>Phone Number</th>
+            <th>email </th>
+            <th>entry </th>
+            </tr>
+    </thead>
+    <tbody>
+        {{#each rows}}
+        <tr>
+            <td>{{full_name}}</td>
+            <td>{{mobile_number}}</td>
+            <td>{{email}}</td>
+            <td>{{entry}}</td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+</div>
+</div>
+
+
+

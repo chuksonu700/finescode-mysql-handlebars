@@ -1,0 +1,45 @@
+
+{{#each rows}}
+<div class="col-md-8 col-sm-12 mx-auto">
+<h2>Welcome {{full_name}}</h2>
+<div class="background-transparent p-3 rounded text-light opacity-25">
+<h5>You have {{entry}} entry share link to get more entry</h5>
+<h4 class="btn btn-secondary btn-lg mx-1"><span id="sharelink">{{share_link}}</span></h4>
+<p><button class="btn btn-info btn-lg mx-1" id="button-copy">Copy Link</button><button class="btn btn-primary btn-lg mx-1" id="button-share">Share now</button></p>
+<p class="result"></p>
+
+{{!-- <button class="btn btn-primary mx-1 btn-lg"> Share now</button> --}}
+</div>
+<script>
+    const myShareUrl = document.getElementById('sharelink').innerText;
+    const shareData = {
+    title: 'MDN',
+    text: 'Learn web development on MDN!',
+    url: myShareUrl
+  }
+
+  const btnShare = document.querySelector('#button-share');
+  const btnCopy = document.querySelector('#button-copy');
+  const resultPara = document.querySelector('.result');
+
+  // Share must be triggered by "user activation"
+  btnShare.addEventListener('click', async () => {
+    try {
+      await navigator.share(shareData)
+      resultPara.textContent = 'Linked Shared'
+    } catch(err) {
+      resultPara.textContent = 'Error: ' + err
+    }
+  });
+  btnCopy.addEventListener('click', async()=>{
+      try{
+          navigator.clipboard.writeText(myShareUrl);
+          resultPara.textContent = 'Linked Copied'
+      } catch{
+          resultPara.textContent ='Error: ' + err
+      }
+  })
+
+</script>
+{{/each}}
+
