@@ -7,7 +7,7 @@ module.exports = {
         user: ENV.USER,
         password: ENV.PASSWORD,
         database: ENV.DATABASE,
-        port: ENV.PORT,
+        port: ENV.PORTS,
     },
     secret: ENV.SECRET
 }
