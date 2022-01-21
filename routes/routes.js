@@ -91,7 +91,7 @@ router.route('/signup')
                                                     } else {
                                                         //creating share links for the new user
                                                         let userId=rows[0].id;
-                                                        let newLink = `http://localhost:3035?r=${rows[0].id}`;
+                                                        let newLink = `https://warm-peak-58434.herokuapp.com?r=${rows[0].id}`;
                 
                                                         connection.query("UPDATE users SET share_link=? where id=?",[newLink,userId], function(err, rows){
                                                             if (err) {
@@ -134,7 +134,7 @@ router.route('/signup')
                                     } else {
                                         //creating share links for the new user
                                         let userId=rows[0].id;
-                                        let newLink = `http://localhost:3035?r=${rows[0].id}`;
+                                        let newLink = `https://warm-peak-58434.herokuapp.com?r=${rows[0].id}`;
 
                                         connection.query("UPDATE users SET share_link=? where id=?",[newLink,userId], function(err, rows){
                                             if (err) {
