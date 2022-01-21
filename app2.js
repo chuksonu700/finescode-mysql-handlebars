@@ -74,7 +74,7 @@ app.use(cookieParser())
 //importing our routes
 const api= require('./routes/routes');
 app.use(api);
-const PORTS = process.env.PORTS 
+const PORTS = process.env.PORT || 3035
 
 // starting the server
 app.listen(PORTS,()=>{
